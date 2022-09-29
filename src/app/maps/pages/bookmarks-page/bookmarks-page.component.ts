@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 
 @Component({
@@ -17,13 +23,17 @@ import * as mapboxgl from 'mapbox-gl';
     `,
   ],
 })
-export class BookmarksPageComponent implements OnInit {
+export class BookmarksPageComponent implements AfterViewInit {
+  map!: mapboxgl.Map;
+
+  @ViewChild('map') mapElement!: ElementRef<HTMLElement>;
+
   constructor() {}
 
-  ngOnInit(): void {
-    const map = new mapboxgl.Map({
+  ngAfterViewInit(): void {
+    this.map = new mapboxgl.Map({
       style: 'mapbox://styles/mapbox/streets-v11',
-      container: 'map',
+      container: this.mapElement.nativeElement,
       center: [-75.59014152932845, 6.257038280924004],
       zoom: 16,
     });
