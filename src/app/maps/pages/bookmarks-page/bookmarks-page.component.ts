@@ -38,4 +38,12 @@ export class BookmarksPageComponent implements AfterViewInit {
       zoom: 16,
     });
   }
+
+  zoomIn(): void {
+    this.map.zoomIn();
+  }
+
+  zoomOut(): void {
+    this.map.zoomOut();
+  }
 }

@@ -7,7 +7,9 @@
     <input type="range" name="zoom" id="zoom" class="form-range" />
   </div>
   <div class="col-12">
-    <button type="button" class="btn btn-primary">+</button>
-    <button type="button" class="btn btn-primary float-end">-</button>
+    <button (click)="zoomIn()" type="button" class="btn btn-primary">+</button>
+    <button (click)="zoomOut()" type="button" class="btn btn-primary float-end">
+      -
+    </button>
   </div>
 </div>
