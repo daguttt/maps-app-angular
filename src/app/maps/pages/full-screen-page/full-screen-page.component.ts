@@ -5,14 +5,7 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-full-screen-page',
   templateUrl: './full-screen-page.component.html',
-  styles: [
-    `
-      #map {
-        height: 100%;
-        width: 100%;
-      }
-    `,
-  ],
+  styles: [],
 })
 export class FullScreenPageComponent implements OnInit {
   constructor() {}
